@@ -1,0 +1,47 @@
+file $(EPICS_BASE)/db/mks937b_controller.db
+{
+ pattern
+ { Sys	, Cntl	, 	PORT	, ADR	}
+ {{#controllers}}
+ { {{sys}}, "{{dev}}", {{port}}, 253 }
+ {{/controllers}}
+}
+
+file $(EPICS_BASE)/db/mks937b_ccg.db
+{
+ pattern
+ { Sys	,  Dev	,	CHAN  ,	PORT,     ADR   ,Cntl	}
+ {{#ccg}}
+ { {{sys}}, "{{dev}}", {{chan}}, {{port}}, 253, "{{cntl}}" }
+ {{/ccg}}
+}
+
+file $(EPICS_BASE)/db/mks937b_relay_ccg.db
+{
+ pattern
+ { Sys	,    Dev        , SPNUM , PORT, ADR   ,    Cntl		}
+ {{#ccgRelays}}
+ { {{sys}}, "{{dev}}", {{spnum}}, {{port}}, 253, "{{cntl}}" }
+ {{/ccgRelays}} 
+}
+
+
+file $(EPICS_BASE)/db/mks937b_pirg.db
+{
+ pattern
+ { Sys	,    Dev         , CHAN , PORT, ADR   , Cntl		}
+ {{#pirg}}
+ { {{sys}}, "{{dev}}", {{chan}}, {{port}}, 253, "{{cntl}}"}
+ {{/pirg}}
+}
+
+
+file $(EPICS_BASE)/db/mks937b_relay_pirg.db
+{
+ pattern
+ { Sys	,     Dev       , SPNUM , PORT, ADR   , Cntl		}
+ {{#pirgRelays}}
+ { {{sys}}, "{{dev}}", {{spnum}}, {{port}}, 253, "{{cntl}}"}
+ {{/pirgRelays}}
+}
+

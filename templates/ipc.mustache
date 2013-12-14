@@ -1,0 +1,23 @@
+file $(EPICS_BASE)/db/gammampc_controller.db
+{
+pattern { Sys	, Cntl		, PORT	}
+	{{#controllers}}
+	{ {{sys}}, "{{dev}}", {{port}}	}
+	{{/controllers}}
+}
+
+file $(EPICS_BASE)/db/gammampc_ip.db
+{
+pattern { Sys	, Cntl		, Dev		, CHAN	, PORT	}
+	{{#ip}}
+	{ {{sys}}, "{{cntl}}", "{{dev}}", {{chan}}, {{port}} }
+	{{/ip}}
+}
+
+file $(EPICS_BASE)/db/gammampc_setpoint.db
+{
+pattern { Sys	, Cntl		, Dev		, CHAN	, SPNUM	, PORT	}
+	{{#setpoint}}
+	{ {{sys}}	, "{{cntl}}"	, "{{dev}}"	, {{chan}}	, {{spnum}}	, {{port}} }
+	{{/setpoint}}
+}

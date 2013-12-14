@@ -1,0 +1,39 @@
+file $(EPICS_BASE)/db/hiden_rga_global.db
+{
+pattern { Sys		, Dev		, PORT		}
+	{{#rga}}
+	{ {{sys}}, "{{dev}}", {{port}} }
+	{{/rga}}
+}
+
+file $(EPICS_BASE)/db/hiden_rga_bar.db
+{
+pattern { Sys		, Dev		, PORT		}
+ 	{{#rga}}
+	{ {{sys}}, "{{dev}}", {{port}} }
+	{{/rga}}
+}
+
+file $(EPICS_BASE)/db/hiden_rga_prfl.db
+{
+pattern { Sys		, Dev		, PORT		}
+ 	{{#rga}}
+	{ {{sys}}, "{{dev}}", {{port}} }
+	{{/rga}}
+}
+
+file $(EPICS_BASE)/db/hiden_rga_mid.db
+{
+pattern { Sys		, Dev		, PORT		}
+ 	{{#rga}}
+	{ {{sys}}, "{{dev}}", {{port}} }
+	{{/rga}}
+}
+
+file $(EPICS_BASE)/db/hiden_rga_degas.db
+{
+pattern { Sys		, Dev		, PORT		}
+ 	{{#rga}}
+	{ {{sys}}, "{{dev}}", {{port}} }
+	{{/rga}}
+}

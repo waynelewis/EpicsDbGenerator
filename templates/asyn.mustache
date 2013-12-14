@@ -1,0 +1,7 @@
+file $(EPICS_BASE)/db/asynRecord.db
+{
+	pattern { P, R,		PORT,	ADDR,	IMAX,	OMAX }
+	{{#asyn}}
+	{ {{sys}}, "{{dev}}Asyn", {{port}}, 0, 80, 80 }
+	{{/asyn}}
+}

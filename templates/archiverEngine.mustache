@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE engineconfig SYSTEM "/usr/share/xml/channelarchiver/engineconfig.dtd">
+<engineconfig>
+	<write_period>30</write_period>
+	<get_threshold>60</get_threshold>
+	<file_size>1000</file_size>
+	<ignored_future>6</ignored_future>
+	<buffer_reserve>3</buffer_reserve>
+	<max_repeat_count>120</max_repeat_count>
+	{{#groups}}
+    	<group>
+                <name>{{name}}</name>
+                {{#channels}}
+                <channel><name>{{pv}}</name><period>1</period><monitor/></channel>
+                {{/channels}}
+        </group>
+	{{/groups}}
+</engineconfig>
